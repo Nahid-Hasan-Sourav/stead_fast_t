@@ -8,6 +8,8 @@
                     <div class="card-body">
                         <h4 class="card-title"></h4>
 
+
+
                         <div class="form-group row">
                             <label for="exampleInputuname3" class="col-sm-3 control-label">Gross Sum:</label>
                             <div class="col-sm-9">
@@ -37,7 +39,7 @@
 
                         <div class="form-group row m-b-0">
                             <div class="offset-sm-3 col-sm-9">
-                                <button type="submit"
+                                <button type="submit" id="calculateBtn"
                                     class="mt-4 text-white btn btn-success waves-effect waves-light">«Calculate»</button>
                             </div>
                         </div>
@@ -60,3 +62,20 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        $('#calculateBtn').click(function() {
+            var grossSum = $('#gross_sum').val();
+            var vatPercentage = $('#vat_percentage').val();
+            var operation = $('#operation').val();
+
+            const data = {
+                grossSum,
+                vatPercentage,
+                operation
+            };
+
+            
+        });
+    </script>
+@endpush

@@ -13,7 +13,7 @@ You can watch the project video [here]().
 ## Installation
 Follow the steps below to set up the project locally:
 - Clone the repo: git clone https://github.com/Nahid-Hasan-Sourav/stead_fast_t.git
-- Run cd QTec
+- Run cd stead_fast_t 
 - Run composer install command
 - Run yarn install or npm install command
 - Run copy .env.example .env command

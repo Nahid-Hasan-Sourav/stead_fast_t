@@ -83,7 +83,7 @@
             });
 
             $.ajax({
-                url: "/vat/calculation",
+                url: "/vatCalculator/calculation",
                 type: "POST",
                 data: data,
 

@@ -25,6 +25,8 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/vatCalculator',[VatCalculatorController::class,'index'])->name('vatcal.index');
 
+    Route::post('/vat/calculation',[VatCalculatorController::class,'vatCalculation'])->name('vatcal.calculation');
+
 });
 
 Route::middleware('auth')->group(function () {

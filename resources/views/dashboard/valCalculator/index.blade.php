@@ -52,10 +52,10 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="card">
+            <div class="card result-card d-none">
                 <div class="card-body">
-                    <h5>Net Ammount : </h5>
-                    <h5>Vat Ammount : </h5>
+                    <h5>Net Amount: <span id="netAmountDisplay"></span></h5>
+                    <h5>VAT Amount: <span id="vatAmountDisplay"></span></h5>
 
                 </div>
             </div>
@@ -75,7 +75,40 @@
                 operation
             };
 
-            
+
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+
+            $.ajax({
+                url: "/vat/calculation",
+                type: "POST",
+                data: data,
+
+                success: function(response) {
+                    // console.log("submit form data: ", response);
+
+                    if (response.status === "success") {
+
+                        console.log("After Vat Calculation: ", response);
+                        $('.result-card').removeClass('d-none');
+                        $('#netAmountDisplay').text(response.netAmount);
+                        $('#vatAmountDisplay').text(response.vatAmount);
+                    }
+
+
+                },
+                error: function(xhr, status, error) {
+                    console.log("Error: ", error);
+                    var response = JSON.parse(xhr.responseText);
+                    console.log("Error Message: ", response.message);
+                    response.message.forEach(function(errorMessage) {
+                        toastr.error(errorMessage);
+                    });
+                },
+            });
         });
     </script>
 @endpush

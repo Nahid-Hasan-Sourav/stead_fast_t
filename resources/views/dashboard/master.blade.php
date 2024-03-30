@@ -11,14 +11,14 @@
 
     <title>@yield('title')</title>
 
-   @include('admin.includes.style')
+   @include('dashboard.includes.style')
   </head>
 
   <body>
 
     <!-- ########## START: LEFT PANEL ########## -->
    <!-- sl-sideleft -->
-    @include('admin.includes.leftsidebar')
+    @include('dashboard.includes.leftsidebar')
     <!-- ########## END: LEFT PANEL ########## -->
 
     <!-- ########## START: HEAD PANEL ########## -->
@@ -62,6 +62,6 @@
       </div><
     </div>
 
-    @include('admin.includes.scripts')
+    @include('dashboard.includes.scripts')
   </body>
 </html>

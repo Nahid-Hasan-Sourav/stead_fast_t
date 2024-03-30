@@ -13,13 +13,13 @@
   </div>
 
   <div class="sl-sideleft-menu">
-    <a href="index.html" class="sl-menu-link active">
+    <a href="{{ route('vatcal.index') }}" class="sl-menu-link active">
       <div class="sl-menu-item">
         <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
         <span class="menu-item-label">Vat Calculator</span>
       </div>
     </a>
-     
+
   </div>
 
   <br>

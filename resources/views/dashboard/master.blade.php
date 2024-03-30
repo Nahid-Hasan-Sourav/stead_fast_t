@@ -46,13 +46,15 @@
         <div class="sl-header-right">
             <nav class="nav">
                 <div class="dropdown">
-                    <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-
-                        <a href=""><i class="icon ion-power"></i> Sign Out</a>
-
+                    <a href="#" id="logoutButton" class="nav-link nav-link-profile" onclick="event.preventDefault(); document.getElementById('logoutForm').submit()">
+                        <i class="icon ion-power"></i> Sign Out
                     </a>
+                    <form id="logoutForm" method="post" action="{{ route('logout') }}">
+                        @csrf
+                    </form>
                 </div><!-- dropdown -->
             </nav>
+
             <!-- navicon-right -->
         </div><!-- sl-header-right -->
     </div>
@@ -65,7 +67,7 @@
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="sl-mainpanel">
         <nav class="breadcrumb sl-breadcrumb">
-            <a class="breadcrumb-item" href="index.html">Dashboard</a>
+            <a class="breadcrumb-item" href="{{ route('dashboard') }}">Dashboard</a>
             <span class="breadcrumb-item active">Vat Calculator</span>
         </nav>
 
